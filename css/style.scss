@@ -1,0 +1,595 @@
+/****************************
+          Initialize
+****************************/
+@font-face {
+  font-family: 'fontawesome';
+  src: url("fonts/fontawesome-webfont.eot");
+  src: url("fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff") format("woff"), url("fonts/fontawesome-webfont.ttf") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesome") format("svg");
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: 'Open Sans','Helvetiva Neue', 'Yu Gothic',sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-adjustment:100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,p,ul,li{
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+p{
+  text-align: justify;
+}
+
+ul,li{
+  list-style: none;
+}
+
+img{
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 100%;
+}
+
+iframe{
+  height: auto;
+  min-height: 320px;
+  width: 100%;
+}
+
+input[id*="spBtn"]{
+  position: absolute;
+  left: -9999px;
+  top:-9999px;
+}
+
+.wrap{
+  overflow: hidden;
+}
+.main{
+  overflow: hidden;
+}
+.container{
+  display: flex;
+  width: 100%;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.right{
+  background: #696969;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.heading{
+  color: #fff;
+  font-size: 4.8rem;
+  font-weight: 300;
+  letter-spacing: 0.035em;
+  line-height: 1;
+  margin: 0 auto 27px;
+  text-transform: uppercase;
+  &--blk{
+    color: #222;
+  }
+}
+
+.text{
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+/****************************
+          Header
+****************************/
+.logo{
+  left: 40px;
+  position: absolute;
+  top:27px;
+  width:83px;
+}
+
+.nav{
+  &__box{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 53px 0 47px;
+    width: 660px;
+  }
+  &__list{
+    > a{
+      color: #222;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      position: relative;
+      text-decoration: none;
+      transition: color 0.3s ease 0s;
+      &:visit,&:active,&:link{
+        color: #222;
+      }
+      &:after{
+        border-bottom: solid 1px #0097db;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 115%;
+        transition: all 0.5s ease 0s;
+        width: 0%;
+      }
+      &:hover{
+        color: #0097db;
+        &:before{
+          width: 100%;
+        }
+        &:after{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.sns{
+  position: absolute;
+  right: 40px;
+  top:50px;
+  width: 70px;
+}
+
+.sns__body{
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-top{
+//  f
+}
+
+/****************************
+          Welcome
+****************************/
+.welcome{
+  background: #222;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 40%;
+  justify-content: center;
+  padding: 40px;
+  p{
+    color: #fff;
+  }
+}
+
+
+/****************************
+          Performance
+****************************/
+.performance{
+  background: #ccc;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 40px;
+  > p{
+    color: #222;
+    margin: 27px auto 0;
+  }
+}
+
+/****************************
+            box
+****************************/
+.box{
+  display: flex;
+  > img{
+    width: 50%;
+  }
+}
+.imgAdjust{
+  height: 50%;
+}
+.logoBox{
+  align-items: center;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  img{
+    max-width: 145px;
+    width: 46%;
+  }
+}
+
+.img{
+  width: 50%;
+  > img{
+    width: 100%;
+  }
+}
+
+.leftBtm{
+  background: url(../img/left-btm.jpg) no-repeat center center;
+  background-size: cover;
+  height: 71%;
+}
+
+/****************************
+         PAS de deux
+****************************/
+.pas__hd{
+  background: #696969;
+//  min-height: 17.5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 40px 40px 0;
+}
+.pas{
+  background: #696969;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0 40px 40px;
+  p{
+    color: #fff;
+    margin: 27px auto 0;
+  }
+}
+
+/****************************
+          Footer
+****************************/
+footer{
+  background: #222;
+  padding: 30px;
+  address,.copy{
+    color:#fff;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+}
+
+/****************************
+        Display Control
+****************************/
+.sp{
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  opacity: 0;
+}
+.pc{
+  position: static;
+  left: auto;
+  top: auto;
+  opacity: 1;
+}
+
+.copy{
+  margin: 10px auto 0;
+}
+
+@media (max-width:1024px){
+  iframe{
+    min-height: 220px;
+  }
+  header{
+    padding: 20px 0 0;
+  }
+  .logo{
+    margin: 0 auto;
+    position: static;
+  }
+  .nav__box{
+    padding: 20px 0;
+  }
+  .sns{
+    left: -9999px;
+    top:-9999px;
+  }
+  .heading{
+    font-size: 4rem;
+  }
+  .text{
+    font-size: 1.6rem;
+  }
+  .logoBox{
+    img{
+      max-width: 110px;
+      width: 46%;
+    }
+  }
+  footer{
+    padding: 20px;
+    address,.copy{
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (max-width:800px){
+  iframe{
+    min-height: 180px;
+  }
+  .heading{
+    font-size: 3rem;
+    margin: 0 auto 13px;
+  }
+  .nav{
+    &__box{
+    }
+    &__list{
+      > a{
+        transition: none;
+        &:visit,&:active,&:link{
+          color: #222;
+        }
+        &:after{
+          border-bottom: none;
+          transition: none;
+        }
+        &:hover{
+          color: #222;
+          &:before{
+            width: 0%;
+          }
+          &:after{
+            width: 0%;
+          }
+        }
+      }
+    }
+  }
+  .welcome,.performance,{
+    padding: 30px;
+  }
+  .pas{
+    padding: 0 30px 30px 30px;
+    &__hd{
+      padding: 30px 30px 0 30px;
+    }
+  }
+  .logoBox{
+    img{
+      max-width: 80px;
+      width: 46%;
+    }
+  }
+}
+
+@media (max-width:670px){
+  header{
+    padding: 20px;
+  }
+  .logo{
+    width: 75px;
+  }
+  .spNav{
+    background: rgba(255,255,255,1);
+    bottom: 0;
+    left: 0 !important;
+    position: fixed !important;
+    transition: all 0.4s ease 0.2s;
+    width: 100%;
+    ul{
+      display: flex;
+      justify-content: space-around;
+      li{
+        width: 33.3333333333%;
+        a{
+          display: block;
+          line-height: 1;
+          padding: 13px 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .spNav__fb,.spNav__ig{
+    text-decoration: none;
+    &:before{
+      color: #222;
+      display: block;
+      font-family: "fontawesome";
+      font-size: 2.3rem;
+      margin: auto;
+    }
+  }
+  .spNav__fb{
+    &:before{
+      content:"\f09a";
+    }
+  }
+  .spNav__ig{
+    &:before{
+      content:"\f16d";
+    }
+  }
+  .navBtnSp{
+    display: block;
+    padding: 13px 0;
+    text-align: center;
+    &:after{
+      color: #222;
+      content: "\f0c9";
+      display: block;
+      font-family: "fontawesome";
+      font-size: 2.4rem;
+      margin: auto;
+    }
+  }
+
+  .nav__box{
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: flex-start;
+    left: 15%;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0px 0 0;
+    position: fixed;
+    top: 15%;
+    transition: all 0.3s ease 0s;
+    width: 70%;
+    z-index: -1;
+  }
+
+  #spBtn__on{
+    &:checked{
+      ~ .nav__box{
+        background: rgba(0,0,0,0.85);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        opacity: 1;
+        overflow: hidden;
+        padding: 50px 0 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 4;
+      }
+      ~ .spNav{
+        bottom: -100%;
+      }
+    }
+  }
+
+  .nav__list{
+    margin: 0px 0 0;
+    text-align: center;
+    &.close{
+      position: absolute;
+      right: 5px;
+      top: 0;
+      label{
+        display: block;
+        padding: 10px;
+        &:before{
+          color: #fff;
+          content: "\f00d";
+          display: block;
+          font-size: 4rem;
+          font-family: "fontawesome";
+        }
+      }
+    }
+    &.navLogo{
+      margin: -23.5% 0 35px;
+    }
+    img{
+      margin: auto;
+      width: 80px;
+    }
+    a{
+      color: #fff;
+      display: inline-block;
+      font-size: 1.6rem;
+      font-weight: 300;
+      padding: 20px 0;
+      text-align: center;
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+
+  .container{
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+  }
+  .left{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .right{
+    background: #696969;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .spKv{
+    background: url(../img/left-top.jpg) no-repeat top 30% center;
+    background-size: cover;
+    height: 300px;
+  }
+
+  .welcome{
+    padding: 20px;
+  }
+  .performance{
+    padding: 20px;
+    > p{
+      margin: 15px auto 0;
+    }
+  }
+  .pas{
+    padding: 20px;
+    > p {
+      margin: 15px 0 0;
+    }
+  }
+
+  .logoBox{
+    padding: 20px;
+    width: 100%;
+    > img{
+      max-width: 80px;
+    }
+  }
+  footer{
+    padding: 0 20px 70px;
+    address,.copy{
+      font-size: 1.2rem;
+    }
+  }
+  /****************************
+  Display Control
+  ****************************/
+  .pc{
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+  }
+  .sp{
+    position: static;
+    left: auto;
+    top: auto;
+    opacity: 1;
+  }
+}
